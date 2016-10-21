@@ -21,6 +21,7 @@ class Role(models.Model):
 
 class Pantheon(models.Model):
     name = models.CharField(max_length=30)
+    date_release = models.DateField(auto_now_add=True)
 
 
 class God(models.Model):

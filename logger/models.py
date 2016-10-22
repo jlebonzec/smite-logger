@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 # Create your models here.
@@ -21,13 +23,13 @@ class Role(models.Model):
 
 class Pantheon(models.Model):
     name = models.CharField(max_length=30, unique=True)
-    date_release = models.DateField(auto_now_add=True)
+    date_release = models.DateField(default=datetime.date.today())
 
 
 class God(models.Model):
     # TODO: set several fields as index
     name = models.CharField(max_length=60, unique=True)
-    date_release = models.DateField(auto_now_add=True)
+    date_release = models.DateField(datetime.date.today())
     role = models.ForeignKey(
         Role,
         on_delete=models.CASCADE
@@ -53,7 +55,7 @@ class Match(models.Model):
         default=_win
     )
     date = models.DateTimeField(
-        auto_now_add=True,
+        default=datetime.datetime.now()
     )
     kills = models.IntegerField()
     deaths = models.IntegerField()

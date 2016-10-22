@@ -10,7 +10,7 @@ class Role(models.Model):
         (_physical, 'Physical'),
         (_magical, 'Magical')
     )
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     damage = models.CharField(
         max_length=1,
         choices=_damage_type,
@@ -20,13 +20,13 @@ class Role(models.Model):
 
 
 class Pantheon(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     date_release = models.DateField(auto_now_add=True)
 
 
 class God(models.Model):
     # TODO: set several fields as index
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
     date_release = models.DateField(auto_now_add=True)
     role = models.ForeignKey(
         Role,

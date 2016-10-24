@@ -4,16 +4,18 @@ from django.shortcuts import (
     HttpResponseRedirect,
     resolve_url
 )
-from sqlite3 import IntegrityError
+from django.contrib.auth import authenticate
 
 from logger.forms import MatchForm
-from logger.models import Match
 
 # Create your views here.
 
 
 def index(request):
-    return HttpResponse("Hey, it's working!")
+    if request.user.is_authenticated:
+        return HttpResponse("Hey, {}!".format(request.user.username))
+    else:
+        return HttpResponse("Boo, I don't know you!")
 
 
 def log(request):

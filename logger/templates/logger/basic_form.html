@@ -1,0 +1,12 @@
+{% block basic_form %}
+    {% load bootstrap %}
+    <form action="{% url 'log' %}" method="post">
+    {% csrf_token %}
+        {{ form|bootstrap_horizontal }}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" type="submit">Submit!</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -5,14 +5,14 @@ from django.utils import timezone
 
 
 class Role(models.Model):
-    _physical = 'P'
-    _magical = 'M'
+    _physical = 'physical'
+    _magical = 'magical'
     _damage_type = (
         (_physical, 'Physical'),
         (_magical, 'Magical')
     )
-    _ranged = 'R'
-    _melee = 'M'
+    _ranged = 'ranged'
+    _melee = 'melee'
     _attack_type = (
         (_ranged, 'Ranged'),
         (_melee, 'Melee')

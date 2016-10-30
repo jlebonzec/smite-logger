@@ -1,8 +1,16 @@
 {% extends "logger/base.html" %}
+
 {% block title %}Log your match{% endblock %}
+
 {% block body %}
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-{% with log_form as form %}
-    {% include "logger/basic_form.html" %}
-{% endwith %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% with log_form as form %}
+        {% url 'log' as action_url %}
+        {% include "logger/basic_form.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+    {{ log_form.media }}
 {% endblock %}

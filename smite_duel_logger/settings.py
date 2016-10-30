@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dal',
+    'dal_select2',
     'logger',
     'bootstrapform',
     'django.contrib.admin',
@@ -101,6 +103,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Location of the authentication page
+# https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-LOGIN_URL
+LOGIN_URL = "/logger/login"
+LOGIN_REDIRECT_URL = '/logger/'
 
 
 # Internationalization

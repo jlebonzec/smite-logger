@@ -1,0 +1,10 @@
+{% extends "logger/base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% url 'login_view' as action_url %}
+    {% include "logger/basic_form.html" %}
+{% endblock %}

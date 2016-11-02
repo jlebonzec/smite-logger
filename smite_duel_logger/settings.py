@@ -106,8 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Location of the authentication page
 # https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-LOGIN_URL
-LOGIN_URL = "/logger/login"
-LOGIN_REDIRECT_URL = '/logger/'
+LOGIN_URL = "/login"
+LOGIN_REDIRECT_URL = '/'
 
 
 # Internationalization
@@ -128,3 +128,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

@@ -1,1 +1,2 @@
-PR_TITLE_REGEX: /([\w \/-]+)\s*:\s*(.*)\s*\((\w{2,}-\d+(\s*,\s*\w{2,}-\d+)*)\)\s*\(?#(\d+)\)?/i
+PR_TITLE_REGEX: (?<verbs>(fix:|feat:|docs:|style:|refactor:|test:|chore:)\s)(?<message>)
+COMMIT_MESSAGE_REGEX: (?<verbs>(fix:|feat:|docs:|style:|refactor:|test:|chore:)\s)(?<message>)

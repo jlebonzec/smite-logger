@@ -1,2 +1,2 @@
-PR_TITLE_REGEX: (?<verbs>(fix:|feat:|docs:|style:|refactor:|test:|chore:)\s)(?<message>)
-COMMIT_MESSAGE_REGEX: (?<verbs>(fix:|feat:|docs:|style:|refactor:|test:|chore:)\s)(?<message>)
+PR_TITLE_REGEX: /((?:[a-z][a-z]+))(\d{3})(:)([a-z0-9])/i
+COMMIT_MESSAGE_REGEX: /(#)(#)((?:[a-z][a-z]+))(\d{3})(:)([a-z0-9])/i
